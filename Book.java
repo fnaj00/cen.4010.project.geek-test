@@ -1,0 +1,54 @@
+package com.geektext.bookbrowsingsorting.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
+public class Book {
+    @Id
+    private Long isbn;
+
+    @Column(nullable = false)
+    private String bookTitle;
+
+    private String author;
+    private String genre;
+
+    private Double price;
+    private Double rating;
+    private Integer copiesSold;
+
+    public Book() {}
+
+    public Book(Long isbn, String bookTitle, String author, String genre,
+                Double price, Double rating, Integer copiesSold) {
+        this.isbn = isbn;
+        this.bookTitle = bookTitle;
+        this.author = author;
+        this.genre = genre;
+        this.price = price;
+        this.rating = rating;
+        this.copiesSold = copiesSold;
+    }
+
+    public Long getIsbn() { return isbn; }
+    public void setIsbn(Long isbn) { this.isbn = isbn; }
+
+    public String getBookTitle() { return bookTitle; }
+    public void setBookTitle(String bookTitle) { this.bookTitle = bookTitle; }
+
+    public String getAuthor() { return author; }
+    public void setAuthor(String author) { this.author = author; }
+
+    public String getGenre() { return genre; }
+    public void setGenre(String genre) { this.genre = genre; }
+
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
+
+    public Double getRating() { return rating; }
+    public void setRating(Double rating) { this.rating = rating; }
+
+    public Integer getCopiesSold() { return copiesSold; }
+    public void setCopiesSold(Integer copiesSold) { this.copiesSold = copiesSold; }
+}
